@@ -12,7 +12,7 @@ export default function LeaderBoard() {
   useEffect(() => {
     const fetchSceneData = async () => {
       try {
-        const res = await fetch(`${apiUrl}api/scenes/sessions`, {
+        const res = await fetch(`${apiUrl}/api/scenes/sessions`, {
           mode: 'cors',
           method: 'GET',
         })

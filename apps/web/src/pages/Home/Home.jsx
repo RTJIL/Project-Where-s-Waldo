@@ -6,10 +6,12 @@ export default function Home() {
   const [data, setData] = useState(null)
   const [loading, setLoading] = useState(true)
 
+  const apiUrl = import.meta.env.VITE_API_URL
+
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch('http://localhost:3000/api/scenes', {
+        const res = await fetch(`${apiUrl}api/scenes`, {
           mode: 'cors',
         })
         const json = await res.json()
