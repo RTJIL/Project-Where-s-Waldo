@@ -26,6 +26,8 @@ export default function Scene() {
   const [feedback, setFeedback] = useState(null)
   const navigate = useNavigate()
 
+  const apiUrl = import.meta.env.VITE_API_URL
+
   console.log('scene data: ', scene, 'location data: ', location)
 
   const handleImgClick = (e) => {
@@ -49,7 +51,7 @@ export default function Scene() {
       secondsElapsed,
     })
     if (sessionId) {
-      fetch(`http://localhost:3000/api/sessions/username`, {
+      fetch(`${apiUrl}api/sessions/username`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -83,7 +85,7 @@ export default function Scene() {
 
     const createSession = async () => {
       try {
-        const res = await fetch('http://localhost:3000/api/sessions', {
+        const res = await fetch(`${apiUrl}api/sessions`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -175,7 +177,7 @@ export default function Scene() {
         setSessionEnded(true)
         setGameOver(true)
 
-        fetch(`http://localhost:3000/api/sessions/`, {
+        fetch(`${apiUrl}api/sessions/`, {
           method: 'PATCH',
           headers: {
             'Content-Type': 'application/json',

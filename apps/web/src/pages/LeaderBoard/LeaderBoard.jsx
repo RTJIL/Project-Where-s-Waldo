@@ -7,10 +7,12 @@ export default function LeaderBoard() {
   const [sceneSessions, setSceneSessions] = useState([])
   const [loading, setLoading] = useState(true)
 
+  const apiUrl = import.meta.env.VITE_API_URL
+
   useEffect(() => {
     const fetchSceneData = async () => {
       try {
-        const res = await fetch('http://localhost:3000/api/scenes/sessions', {
+        const res = await fetch(`${apiUrl}api/scenes/sessions`, {
           mode: 'cors',
           method: 'GET',
         })

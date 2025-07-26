@@ -1,13 +1,17 @@
 import { prisma } from './db.js'
 
 async function main() {
-  await prisma.$transaction([
-    prisma.position.deleteMany(),
-    prisma.gameSession.deleteMany(),
-    prisma.scene.deleteMany(),
-    prisma.character.deleteMany(),
-    prisma.user.deleteMany(),
-  ])
+  const charactersExist = await prisma.character.count()
+
+  if (charactersExist > 0) {
+    await prisma.$transaction([
+      prisma.position.deleteMany(),
+      prisma.gameSession.deleteMany(),
+      prisma.scene.deleteMany(),
+      prisma.character.deleteMany(),
+      prisma.user.deleteMany(),
+    ])
+  }
 
   const waldo = await prisma.character.create({ data: { name: 'Waldo' } })
   const wizard = await prisma.character.create({ data: { name: 'Wizard' } })
