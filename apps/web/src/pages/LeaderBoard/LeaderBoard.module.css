@@ -1,0 +1,79 @@
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.leaderboards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  padding: 16px;
+  max-width: 1200px;
+  width: 100%;
+  max-height: 900px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #888 transparent;
+}
+
+.leaderboards::-webkit-scrollbar {
+  width: 8px;
+}
+.leaderboards::-webkit-scrollbar-thumb {
+  background-color: #aaa;
+  border-radius: 10px;
+}
+.leaderboards::-webkit-scrollbar-thumb:hover {
+  background: #777;
+}
+
+.sceneBlock {
+  background: #fefefe;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-left: 4px solid #38b000;
+}
+
+.sceneBlock h2 {
+  font-size: 1.2rem;
+  margin: 0;
+  color: #333;
+}
+
+.sceneBlock ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sceneBlock li {
+  font-size: 0.95rem;
+  padding: 4px 0;
+  border-bottom: 1px solid #eee;
+  color: #444;
+}
+
+.button {
+  padding: 10px 16px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background-color: rgb(253, 245, 170);
+  color: rgb(17, 63, 103);
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}

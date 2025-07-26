@@ -1,0 +1,57 @@
+/* FindBox.module.css */
+
+.boxContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.box {
+  border: 2px solid rgb(17, 63, 103);
+  width: 30px;
+  height: 30px;
+}
+
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dropdown span {
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  border-radius: 8px;
+}
+
+.dropdown span,
+.list {
+  user-select: none;
+  background-color: rgb(17, 63, 103);
+}
+
+.list p {
+  user-select: none;
+  cursor: pointer;
+  transition: background-color 0.1s ease-out;
+  padding: 10px;
+  margin: 0;
+}
+
+.list p:hover {
+  background-color: rgb(13, 49, 81);
+}
+
+.icon {
+  font-size: 1.6rem;
+  cursor: pointer;
+  transform: rotate(180deg);
+  transition: transform 0.2s ease;
+}
+
+.rotate {
+  transform: rotate(360deg);
+}

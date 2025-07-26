@@ -1,0 +1,30 @@
+.footer {
+  padding: 10px;
+  font-size: 0.96rem;
+  /* background-color: rgb(88, 160, 200); */
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1px; /* Line thickness */
+  width: 100%;
+  background-color: rgb(88, 160, 200); /* same as footer color */
+}
+
+.icon {
+  font-size: 1.4rem;
+  color: rgb(253, 245, 170);
+  transition: transform 0.1s ease-out;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+}
