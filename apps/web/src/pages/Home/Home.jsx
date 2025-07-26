@@ -25,7 +25,7 @@ export default function Home() {
     }
 
     fetchData()
-  }, [])
+  }, [apiUrl])
 
   if (loading) return <div className="loading"></div>
 

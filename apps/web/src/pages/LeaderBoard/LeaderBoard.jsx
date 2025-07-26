@@ -37,7 +37,7 @@ export default function LeaderBoard() {
     <div className={styles.container}>
       <div className={styles.leaderboards}>
         {loading ? (
-          <p>Loading leaderboard...</p>
+          <div className="loading"></div>
         ) : sceneSessions.length > 0 ? (
           sceneSessions.map((scene) => (
             <div key={scene.id} className={styles.sceneBlock}>
